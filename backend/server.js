@@ -12,11 +12,19 @@ const port = process.env.PORT || 4000
 connectDB()
 connectCloudinary()
 
+// Middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: [
+        'https://prescripto-tawny-eight.vercel.app',
+        'https://prescripto-rw15.vercel.app'
+    ],
+    credentials: true
+}))
 
+// API endpoints
 app.use('/api/admin', adminRouter)
-app.use('/api/doctor', doctorRouter)  
+app.use('/api/doctor', doctorRouter)
 app.use('/api/user', userRouter)
 
 app.get('/', (req, res) => {
