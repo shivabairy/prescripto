@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: "Outfit", sans-serif;
+}
+.header-title{
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+.active hr{
+    @apply block;
+}
+::-webkit-scrollbar {
+  @apply hidden;
+}
+@media (max-width: 768px) {
+  .active p {
+    @apply text-white bg-primary;
+  }
+}
